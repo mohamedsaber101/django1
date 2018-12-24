@@ -8,8 +8,8 @@
 you have those album:
 <ul>
     {% for album in albums %}
-        <li> <a href="music/{{ album.id }}" > {{ album.album_title }}</a></li><br>
-        <ul><li>{{ album.artist }}</li></ul><br>
+        <li> <a href="/music/{{ album.id }}" > {{ album.album_title }}</a></li><br>
+        <ul><li><a href="/music/artist={{ album.artist }}" >{{ album.artist }}</a></li></ul><br>
     {% endfor %}
 </ul>
 

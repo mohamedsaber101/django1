@@ -6,5 +6,6 @@ urlpatterns = [
     path('index', views.index),
     url(r'^$', views.index),
     url(r'^(?P<album_id>[0-9]+)/$', views.detail),
-    url(r'^album_title:(?P<album_title>[A-Za-z]+)basha/$', views.title),
+
+    url(r'^artist=(?P<artist>[a-z ]+)$', views.artist)
  ]
