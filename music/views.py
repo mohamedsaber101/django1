@@ -25,7 +25,7 @@ def detail(request, album_id):
 
 
 
-def title(request, album_title):
+def title(request,  album_title):
     return HttpResponse('<html><head><title> Saber developer as  title </title></head><body><h1>Hello its Me saber DEVELOPER</h1><h2>Here are the details of Album title: ' + str(album_title) + '</h2></body></html>')
 
 def artist(requset, artist):
