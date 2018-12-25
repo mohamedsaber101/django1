@@ -1,0 +1,3 @@
+from music.models import Album,Song
+new_album = Album.objects.get(pk=6)
+new_album.album_title
