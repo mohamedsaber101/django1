@@ -7,8 +7,15 @@
 <body>
 <h1>
 
-            these are the details for {{ album_id }}
+            these are the details for {{ sample.id }}:
 
-</h1>
+
+</h1><br>
+<ul>
+    {%  for song in songs %}
+    <li> {{  song.song_title }} </li>
+    {%  endfor %}
+</ul>
+<img src="{{  sample.album_logo }}" height="200" width="300">
 </body>
 </html>

@@ -7,5 +7,6 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     url(r'^music/', include('music.urls')),
+    url(r'^$', admin.site.urls)
 ]
 #change

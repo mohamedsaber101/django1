@@ -16,7 +16,10 @@ def index(request):
 def detail(request, album_id):
     try:
         exist = Album.objects.get(id=album_id)
-        cont = {"album_id": album_id }
+        for song in exist.song_set.all():
+            print (song.song_title)
+
+        cont = {"sample": exist , "songs": exist.song_set.all()}
 
         return render(request, "music/album.html", cont)
     except:
