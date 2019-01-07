@@ -9,7 +9,7 @@ from django.shortcuts import render
 def index(request):
     all = Album.objects.all()
     cont = {"albums": all }
-    return render(request, 'music/index.html', cont)
+    return render(request, 'music/index.html', cont )
 
 
 '''
