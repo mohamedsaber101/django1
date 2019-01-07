@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.http import HttpResponse, Http404
@@ -12,7 +12,7 @@ def index(request):
     return render(request, 'music/index.html', cont)
 
 
-
+'''
 def detail(request, album_id):
     try:
         exist = Album.objects.get(id=album_id)
@@ -25,7 +25,10 @@ def detail(request, album_id):
     except:
 
         raise Http404("Doesn't Exist")
-
+'''
+def detail(request, album_id):
+    a = get_object_or_404(Album,  pk=album_id)
+    return render(request, 'music/album.html', {"sample": a, "songs": a.song_set.all()})
 
 
 def title(request,  album_title):
@@ -36,4 +39,12 @@ def artist(requset, artist):
     cont = {"artist" : artist}
 
     return  render(requset, 'music/artists.html', cont)
+
+
+def favorite(request, Album_id):
+    a = get_object_or_404(Album, pk=Album_id)
+    song = a.song_set.get(pk=request.GET['song'])
+    song.is_favorite = True
+    song.save()
+    return HttpResponse(request.GET['song'] + '  favorited!!')
 

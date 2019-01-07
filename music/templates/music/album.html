@@ -1,4 +1,14 @@
+
+{% extends 'music/base.html' %}
+
+{% block r %}
 <!DOCTYPE html>
+
+
+
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,11 +21,27 @@
 
 
 </h1><br>
-<ul>
+<form id="nameform" action="{% url "music:favorite"  sample.id %}" method="get">
+
     {%  for song in songs %}
-    <li> {{  song.song_title }} </li>
+
+
+        <input type="checkbox" name="song" value="{{song.id }}">{{  song.song_title }}
+        {% if song.is_favorite %}<strong>F</strong>{% endif %}<br>
+
+
     {%  endfor %}
-</ul>
-<img src="{{  sample.album_logo }}" height="200" width="300">
+        <input type="submit" value="favorite!">
+</form>
+
+
+
+
+
 </body>
 </html>
+{% endblock %}
+
+{% block title %}
+Albums
+{% endblock %}

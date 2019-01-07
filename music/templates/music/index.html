@@ -1,3 +1,13 @@
+<!-- loads the path to your static files >
+
+
+<!-->
+
+{% extends 'music/base.html' %}
+
+{% block r %}
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +18,8 @@
 you have those album:
 <ul>
     {% for album in albums %}
-        <li> <a href="/music/{{ album.id }}" > {{ album.album_title }}</a></li><br>
-        <ul><li><a href="/music/artist={{ album.artist }}" >{{ album.artist }}</a></li></ul><br>
+        <li> <a href="{% url "music:detail" album.id %}" > {{ album.album_title }}</a></li><br>
+        <ul><li><a href="{% url 'music:artist' album.artist %}" >{{ album.artist }}</a></li></ul><br>
     {% endfor %}
 </ul>
 
@@ -17,3 +27,11 @@ you have those album:
 
 </body>
 </html>
+
+{% endblock %}
+
+{% block title %}
+
+    Index
+
+{% endblock %}

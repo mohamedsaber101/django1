@@ -1,6 +1,7 @@
 from music.models import Album, Song
 
-a = Album.objects.get(pk=4)
-a.artist
+a = Album.objects.get(pk=5)
 
-a.song_set.all()
+
+
+Song.objects.get(pk=3).is_favorite

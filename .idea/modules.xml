@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/django1.iml" filepath="$PROJECT_DIR$/.idea/django1.iml" />
       <module fileurl="file://$USER_HOME$/PycharmProjects/test/.idea/test.iml" filepath="$USER_HOME$/PycharmProjects/test/.idea/test.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/viberr/.idea/viberr.iml" filepath="$USER_HOME$/PycharmProjects/viberr/.idea/viberr.iml" />
     </modules>
   </component>
 </project>
